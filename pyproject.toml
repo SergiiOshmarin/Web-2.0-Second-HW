@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "CLBOT_PY4POWER"
+version = "0.0.4"
+license="MIT"
+description = "\"Store and change text notes and contacts info (phones, address, email).\""
+authors = ["ortursucceeh <author@example.com>",
+  "Yuriy Krasyuk <author@example.com>",
+  "Serhii-Kravchenko-2022 <author@example.com>",
+  "SergiiOshmarin <author@example.com>" ]
+readme = "README.md"
+packages = [{include = "clbot_py4power"}]
+homepage = "https://github.com/ortursucceeh/Project-Personal_assistantt"
+keywords = ["pybot"]
+
+[tool.poetry.dependencies]
+python = ">=3.7"
+tabulate = "0.9.0"
+
+[tool.poetry.scripts]
+pybot = "CLBOT_PY4POWER.main:main"
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/ortursucceeh/Project-Personal_assistant/issues"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
