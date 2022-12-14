@@ -1,17 +1,15 @@
-FROM python:3.11-alpine3.15
+FROM python:3.10-alpine3.15
 
-WORKDIR /CLBOT_PY4POWER
+WORKDIR /app/CLBOT_PY4POWER
 
-ENV POETRY_VIRTUALENVS_CREATE=false
+RUN pip install --trusted-host pypi.org poetry
 
-RUN pip install poetry 
-
-COPY ["poetry.lock", "pyproject.toml","/CLBOT_PY4POWER/"]
+COPY ["poetry.lock", "pyproject.toml","/app/CLBOT_PY4POWER/"]
 
 RUN poetry config virtualenvs.create false
 
 RUN poetry install
 
-COPY . /CLBOT_PY4POWER
+COPY . /app
 
 CMD ["python","main.py"]
